@@ -54,14 +54,45 @@ SimpleForm.setup do |config|
     b.optional :maxlength
     b.optional :pattern
     b.optional :min_max
-    #b.wrapper tag: 'div', class: 'controls' do |input|
-      #input.wrapper tag: 'div', class: 'input-prepend' do |prepend|
-      #  prepend.use :input
-      #end
-      b.use :hint,  wrap_with: { tag: 'div', class: 'hint' }
-      b.use :error, wrap_with: { tag: 'div', class: 'ui red pointing above label error' }
-    #end
+    b.use :hint,  wrap_with: { tag: 'div', class: 'hint' }
+    b.use :error, wrap_with: { tag: 'div', class: 'ui red pointing above label error' }
+
   end
+
+  config.wrappers :semantic_checkbox, tag: 'div', class: "inline field", error_class: 'error', hint_class: 'with_hint' do |b|
+    b.use :html5
+    b.wrapper tag: 'div', class: 'ui checkbox' do |input|
+      input.use :input
+      input.wrapper tag: 'label' do |lab|
+        #label should come with for='id' attribute  but don't know how to do this
+      end
+    end
+    b.use :label
+  end
+
+  config.wrappers :semantic_checkbox_slider, tag: 'div', class: "inline field", error_class: 'error', hint_class: 'with_hint' do |b|
+    b.use :html5
+    b.wrapper tag: 'div', class: 'ui slider checkbox' do |input|
+      input.use :input
+      input.wrapper tag: 'label' do |lab|
+        #label should come with for='id' attribute  but don't know how to do this
+      end
+    end
+    b.use :label
+  end
+
+  config.wrappers :semantic_checkbox_toggle, tag: 'div', class: "inline field", error_class: 'error', hint_class: 'with_hint' do |b|
+    b.use :html5
+    b.wrapper tag: 'div', class: 'ui toggle checkbox' do |input|
+      input.use :input
+      input.wrapper tag: 'label' do |lab|
+        #label should come with for='id' attribute  but don't know how to do this
+      end
+    end
+    b.use :label
+  end
+
+
 
 
   # The default wrapper to be used by the FormBuilder.
@@ -162,4 +193,3 @@ SimpleForm.setup do |config|
   # Default class for inputs
   # config.input_class = nil
 end
-
