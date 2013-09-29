@@ -63,33 +63,36 @@ SimpleForm.setup do |config|
     b.use :html5
     b.wrapper tag: 'div', class: 'ui checkbox' do |input|
       input.use :input
-      input.wrapper tag: 'label' do |lab|
-        #label should come with for='id' attribute  but don't know how to do this
-      end
+      #this label should come with for='id' attribute  but without text
+      input.use :label
     end
-    b.use :label
+    b.wrapper tag: 'label' do |lab|
+      #this label should come without for='id' attribute  but with text
+    end
   end
 
   config.wrappers :semantic_checkbox_slider, tag: 'div', class: "inline field", error_class: 'error', hint_class: 'with_hint' do |b|
     b.use :html5
     b.wrapper tag: 'div', class: 'ui slider checkbox' do |input|
       input.use :input
-      input.wrapper tag: 'label' do |lab|
-        #label should come with for='id' attribute  but don't know how to do this
-      end
+      #this label should come with for='id' attribute  but without text
+      input.use :label
     end
-    b.use :label
+    b.wrapper tag: 'label' do |lab|
+      #this label should come without for='id' attribute  but with text
+    end
   end
 
   config.wrappers :semantic_checkbox_toggle, tag: 'div', class: "inline field", error_class: 'error', hint_class: 'with_hint' do |b|
     b.use :html5
     b.wrapper tag: 'div', class: 'ui toggle checkbox' do |input|
       input.use :input
-      input.wrapper tag: 'label' do |lab|
-        #label should come with for='id' attribute  but don't know how to do this
-      end
+      #this label should come with for='id' attribute  but without text
+      input.use :label
     end
-    b.use :label
+    b.wrapper tag: 'label' do |lab|
+      #this label should come without for='id' attribute  but with text
+    end
   end
 
 
